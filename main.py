@@ -1,6 +1,6 @@
 import random
 class game :
-    def __init__(self,type='xúc xắc')
+    def __init__(self,type='xúc xắc'):
         self.type = type
         self.score_list = []
 
@@ -11,14 +11,14 @@ class game :
       elif self.type == 'xúc xắc':
         return random.randint(1,6)
     @property
-    def quantity(self)
+    def quantity(self):
       return len(self.score_list)
     @quantity.setter
     def quantity(self,new_quantity):
       for _ in range(new_quantity):
         self.score_list.append(self.score)
     @quantity.deleter
-    def quantity(self)
+    def quantity(self):
       self.score_list = []
     @property
     def total_score(self):
