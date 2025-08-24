@@ -1,42 +1,33 @@
+import streamlit as  st
+appetizer=['Bánh mì nướng phomai','súp hành tây Pháp','Salad Caesar','Gỏi cuốn','Bánh mì bơ tỏi']
+main = ['Pizza','Pad Thai','Steak','Moussaka','Paella']
+dessert=['Cheesecake','Tiramisu','Crème brulée','Panna cotta','Trifle']
+with st.form('Thực đơn yêu thích'):
+  option1 = st.multiselect('Món khai vị ưu thích của bạn?',appetizer)
+  option2 = st.multiselect('Món chính ưu thích của bạn?',main)
+  option3 = st.multiselect('Món tráng miệng ưu thích của bạn?',dessert)
+  submitted = st.form_submit_button('Submit')
+if submitted:
+  st.write('các lựa chọn của bạn là:')
+  st.write('**1.món khai vị:**')
+  if len(options1)==0:
+    st.write('Bạn chưa chọn món khai vị')
+  else:
+    for i in range(len(option1)):
+      st.write(option1[i])
 
-import random
+  st.write('**2.món chính:**')
+  if len(options2)==0:
+    st.write('Bạn chưa chọn món chính')
+  else:
+    for i in range(len(option2)):
+      st.write(option2[i])
 
-class Game:
-    def __init__(self, type='xúc xắc'):
-        self.type = type
-        self.score_list = []
-
-    @property
-    def score(self):
-        if self.type == 'đồng xu':
-            return random.randint(0, 1)
-        elif self.type == 'xúc xắc':
-            return random.randint(1, 6)
-    
-    @property
-    def quantity(self):
-        return len(self.score_list)
-    
-    @quantity.setter
-    def quantity(self, new_quantity):
-        for _ in range(new_quantity):
-            self.score_list.append(self.score)
-    
-    @quantity.deleter
-    def quantity(self):
-        self.score_list = []
-    
-    @property
-    def total_score(self):
-        return sum(self.score_list)
-    
-    def play(self, quantity=0):
-        del self.quantity
-        self.quantity = quantity
-        print(f"điểm {self.quantity} lần chơi {self.type}: {self.score_list}\ntổng điểm: {self.total_score}")
-
-game1 = Game(type='đồng xu')
-game1.play(quantity=5)
-
-game2 = Game(type='xúc xắc')
-game2.play(quantity=3)
+  st.write('**3.món tráng miệng:**')
+  if len(options3)==0:
+    st.write('Bạn chưa chọn món tráng miệng')
+  else:
+    for i in range(len(option3)):
+      st.write(option3[i])
+      
+      
