@@ -10,21 +10,21 @@ with st.form('Thực đơn yêu thích'):
 if submitted:
   st.write('các lựa chọn của bạn là:')
   st.write('**1.món khai vị:**')
-  if len(options1)==0:
+  if len(option1)==0:
     st.write('Bạn chưa chọn món khai vị')
   else:
     for i in range(len(option1)):
       st.write(option1[i])
 
   st.write('**2.món chính:**')
-  if len(options2)==0:
+  if len(option2)==0:
     st.write('Bạn chưa chọn món chính')
   else:
     for i in range(len(option2)):
       st.write(option2[i])
 
   st.write('**3.món tráng miệng:**')
-  if len(options3)==0:
+  if len(option3)==0:
     st.write('Bạn chưa chọn món tráng miệng')
   else:
     for i in range(len(option3)):
