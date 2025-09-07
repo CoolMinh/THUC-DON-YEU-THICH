@@ -25,3 +25,10 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "streamlit run main.py"
+
+[[ports]]
+localPort = 8501
+externalPort = 80
+
+[agent]
+expertMode = true
